@@ -6,7 +6,7 @@ export default function TodoList(props) {
     return (
             <ul>
                 {props.tasks.map((task, index) => (
-                    <TodoItem key={index} task={task} />
+                    <TodoItem key={index} task={task} onTaskDelete={props.onTaskDelete}/>
                 ))}
             </ul>
     )

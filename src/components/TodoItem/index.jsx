@@ -9,6 +9,10 @@ export default function TodoItem(props) {
         setIsCompleted(true);
     }
 
+    function deleteTask() {
+        props.onTaskDelete(props.task)
+    }
+
     return (
         <li style={{ textDecoration: isCompleted ? 'line-through' : 'none' }}>
             {props.task}
@@ -17,6 +21,7 @@ export default function TodoItem(props) {
                     Concluir
                 </button>
             )}
+            <button onClick={() => deleteTask()}>Delete</button>
         </li>
     )
 }

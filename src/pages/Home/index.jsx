@@ -13,6 +13,10 @@ export default function Home() {
         setNewTask("");
     }
 
+    function deleteTask(taskToDelete) {
+        setTaskList(taskList.filter(task => task !== taskToDelete));
+    }
+
     return (
         <div>
             <h1>
@@ -27,7 +31,7 @@ export default function Home() {
                 <button type="submit">Salvar</button>
             </form>
 
-            <TodoList tasks={taskList} />
+            <TodoList tasks={taskList} onTaskDelete={deleteTask}/>
         </div>
     )
 }
